@@ -92,6 +92,7 @@ define(['/scripts/lib/d3.js','/scripts/underscore.js'],
     console.log(tree_nodes);
 
     var maxSize = tree_nodes[0].size;
+      
     var scaleY = function(y) { return y*(height - (2*padding))+padding }
     var scaleX = function(x) { return x*(width - (2*padding))+padding }
     var radiusScale = d3.scale.linear().domain([0,maxSize]).range([10,50]);
@@ -126,9 +127,10 @@ define(['/scripts/lib/d3.js','/scripts/underscore.js'],
           
       })
       .enter().append("svg:path")
-      .attr("d", function(d) { return makeArc(d.start_angle, d.end_angle, d.radius)   } )
+      .attr("d", function(d) { return makeArc(d.start_angle, d.end_angle, d.radius)   })
       .attr("stroke","white")
       .attr("fill",function(d) { return "black"; } )
+      .on("click",function(d) { console.log(d); });
     }
 
   return ordering_graph;
