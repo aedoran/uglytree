@@ -1,8 +1,8 @@
 define(['/scripts/underscore.js'],function(_) {
 
   var attr = {
-    things        : ['dre','weezer', 'led zepplin','etta james','short round'],
-    id            : _.range(10000),
+    things        : ['dre','weezer', 'ledzepplin','ettajames','nelly'],
+    id            : _.range(600),
   }
 
   return function() {
